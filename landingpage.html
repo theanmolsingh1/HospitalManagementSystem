@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Landing Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #302b63, #24243e);
+            color: #fff;
+            /* overflow: hidden; */
+        }
+
+        /* Bubbles Background Effect */
+        .bubbles {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: rise 10s infinite linear;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-120vh);
+                opacity: 0;
+            }
+        }
+
+        /* Random Bubble Sizes and Animation Delay */
+        .bubble:nth-child(1) { width: 20px; height: 20px; left: 10%; animation-duration: 6s; animation-delay: 0s; }
+        .bubble:nth-child(2) { width: 30px; height: 30px; left: 20%; animation-duration: 8s; animation-delay: 1s; }
+        .bubble:nth-child(3) { width: 25px; height: 25px; left: 30%; animation-duration: 7s; animation-delay: 2s; }
+        .bubble:nth-child(4) { width: 40px; height: 40px; left: 50%; animation-duration: 9s; animation-delay: 3s; }
+        .bubble:nth-child(5) { width: 15px; height: 15px; left: 60%; animation-duration: 5s; animation-delay: 4s; }
+        .bubble:nth-child(6) { width: 35px; height: 35px; left: 70%; animation-duration: 10s; animation-delay: 1s; }
+        .bubble:nth-child(7) { width: 20px; height: 20px; left: 80%; animation-duration: 7s; animation-delay: 2s; }
+        .bubble:nth-child(8) { width: 30px; height: 30px; left: 90%; animation-duration: 8s; animation-delay: 3s; }
+        .bubble:nth-child(9) { width: 25px; height: 25px; left: 15%; animation-duration: 6s; animation-delay: 5s; }
+        .bubble:nth-child(10) { width: 40px; height: 40px; left: 85%; animation-duration: 9s; animation-delay: 2s; }
+
+        
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+        }
+       nav ul {
+    list-style: none;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px; /* Space between bubbles */
+}
+
+nav ul li {
+    background: rgba(255, 255, 255, 0.3); /* More prominent background */
+    padding: 20px 40px; /* Bigger size for full bubble effect */
+    border-radius: 50px; /* Rounded bubble */
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2); /* Soft glow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+nav ul li:hover {
+    transform: scale(1.1); /* Smooth hover effect */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+        .about-box {
+            background: rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 50%;
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .about-box:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(10, 62, 129, 0.5);
+        }
+        .doctor-list, .contact-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .doctor {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer; /* 👈 This changes the cursor to a finger (pointer) */
+        }
+        .doctor:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        
+         .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 200px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-item:hover {
+            transform: scale(1.04);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+        }
+        .appointment-box {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+            width: 300px;
+            margin: auto;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .appointment-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(211, 71, 71, 0.5);
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        input, button {
+            padding: 10px;
+            width: 250px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        button {
+            background: #7b00ff;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #9a00e6;
+            box-shadow: 0 0 15px #bb00ff;
+        }
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -4px 10px rgba(255, 255, 255, 0.2);
+        }
+        #thankYouMessage {
+            display: none;
+            background: #9a00e6;
+            color: #fff;
+            font-size: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+            width: fit-content;
+            margin: 20px auto;
+            box-shadow: 0 0 15px rgba(81, 41, 41, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+    </style>
+</head>
+<body>  
+     
+    <div class="bubbles">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+    <header>
+        <h1>Governoment Hospital, TamilNadu</h1>
+        <nav>
+            <ul>
+                <p style="font-size: 40px;">👨🏻‍⚕️</p>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#doctors">Doctors</a></li>
+                <li><a href="#appointment">Appointment</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="about">
+        <div class="about-box" style="color: rgb(255, 255, 255); text-align: center;">
+            <h2>💉About Us⚕️</h2>
+            <p>💊Our hospital is committed to delivering compassionate and high-quality medical care to our patients. With a team of experienced doctors, state-of-the-art technology, and patient-centered services, we ensure that every individual receives the best possible treatment.</p>
+            <p>🩺We strive to create a healing environment where every patient feels comfortable and cared for. Your health is our priority, and we are dedicated to helping you lead a healthier life.</p>
+    
+            <h3>Here is more to know about us!!</h3>
+            <ul style="list-style: none; padding: 0;">
+                <li><a href="https://www.tamilnadumedicalcouncil.org/" target="_blank">Tamil Nadu Medical Council</a></li>
+                <li><a href="https://tnmedicalselection.net/" target="_blank">TN Medical Selection</a></li>
+                <li><a href="https://tnhealth.tn.gov.in/" target="_blank">TN Health Department</a></li>
+            </ul>
+        </div>
+    </section>
+    
+    <style>
+        #about a {
+            text-decoration: none;
+            color: rgb(0, 183, 255);
+            font-size: 16px;
+            font-weight: bold;
+        }
+        #about a:hover {
+            text-decoration: underline;
+            color: rgb(21, 110, 161);
+        }
+    </style>
+    
+    
+    
+    
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>Emergency Care, Cardiology, Neurology, Orthopedics, Pediatrics and many more!!</p>
+    </section>
+    
+    <section id="doctors">
+        <h2>Our Doctors</h2>
+        <div class="doctor-list">
+            <div class="doctor" onclick="viewDoctor('John Doe', 'Cardiologist', 'Dr. John Doe is a leading cardiologist with 15 years of experience in treating heart diseases.')">
+                <h3>Dr. John Doe</h3>
+                <p>⭐ ⭐ ⭐ ⭐ ⭐</p>
+                <p>Cardiologist</p>
+            </div>
+            <div class="doctor" onclick="viewDoctor('Jane Smith', 'Neurologist', 'Dr. Jane Smith specializes in neurology and has helped numerous patients recover from neurological disorders.')">
+                <h3>Dr. Jane Smith</h3>
+                <p>⭐ ⭐ ⭐</p>
+                <p>Neurologist</p>
+            </div>
+            <div class="doctor" onclick="viewDoctor('Emily Brown', 'Orthopedic Surgeon', 'Dr. Emily Brown is an expert in orthopedic surgeries and sports injuries.')">
+                <h3>Dr. Emily Brown</h3>
+                <p>⭐ ⭐ ⭐</p>
+                <p>Orthopedic Surgeon</p>
+            </div>
+            <div class="doctor" onclick="viewDoctor('William Clark', 'Pediatrician', 'Dr. William Clark provides excellent pediatric care, ensuring children’s health and well-being.')">
+                <h3>Dr. William Clark</h3>
+                <p>⭐⭐</p>
+                <p>Pediatrician</p>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+        function viewDoctor(name, specialization, description) {
+            const url = `doctor.html?name=${encodeURIComponent(name)}&specialization=${encodeURIComponent(specialization)}&description=${encodeURIComponent(description)}`;
+            window.location.href = url;
+        }
+    </script>
+    
+    
+    <section id="appointment">
+        
+        <div class="appointment-box">
+            <form action="index.php" method="post">
+                <h2>Book an Appointment</h2>
+                <input type="number" name="reciptno" placeholder="Enter Your Reciept Number" required>
+                <input type="text" name="name" id="name" placeholder="Your Name" required>
+                <input type="text" name="phone" id="phone" placeholder="Your Phone Number" required>
+                <input type="date"  required>
+                <button type="submit" onclick="showThankYou()">Book Now</button> 
+            </form>
+        </div>
+    </section>
+
+    <!-- <button type="button" onclick="showThankYou()">Book Now</button>  -->
+    <p id="thankYouMessage"> 🙌 Thank you for booking your appointment!</p>
+    <script>
+        function showThankYou() {
+            let message = document.getElementById("thankYouMessage");
+            message.style.display = "block";
+            message.style.opacity = "1";
+            
+            setTimeout(() => {
+                message.style.opacity = "0";
+                setTimeout(() => { message.style.display = "none"; }, 500); 
+            }, 3000); 
+        }
+    </script>
+    
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-list">
+            <div class="contact-item"><p>Email: contact@hospital.com</p></div>
+            <div class="contact-item"><p>Phone: +123456789</p></div>
+            <div class="contact-item"><p>Address: 123 Main Street, City, Country</p></div>
+            <div class="contact-item"><p>Support: support@hospital.com</p></div>
+        </div>
+    </section>
+    <script>
+        (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="VDngpRlJ3Ps6hnPo_Txiq";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+        </script>
+    <footer>
+        <p>&copy; 2025 Our Hospital. All rights reserved.</p>
+    </footer>
+  
+</body>
+</html>
+
+
+<!-- INSERT INTO `people` (`reciptno`, `name`, `phone`, `appdate`) VALUES ('101', 'ankit', '6394604782', current_timestamp()); -->
+
