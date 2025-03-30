@@ -1,16 +1,4 @@
 #Hospital Management System
-![image](https://github.com/user-attachments/assets/0b698760-0bc9-44fc-8d77-21e8458a2db1)
-![image](https://github.com/user-attachments/assets/c4594696-7a13-463a-b09e-38225f10d29c)
-![image](https://github.com/user-attachments/assets/ebd68e12-2213-4936-bb82-b1d7c65fb4d4)
-![image](https://github.com/user-attachments/assets/d60bff00-bc70-4730-87c3-b7dff1b11c58)
-![image](https://github.com/user-attachments/assets/9a884913-128c-455b-b743-50fff52d2bc4)
-![image](https://github.com/user-attachments/assets/a79f1c0e-da23-467b-b7ed-4e71560c7c7c)
-![image](https://github.com/user-attachments/assets/ecc25400-76df-4ec3-9824-7f9312627d7a)
-![image](https://github.com/user-attachments/assets/0ae3c14a-d1f4-4fe5-a7ed-12c5ad20cd03)
-![image](https://github.com/user-attachments/assets/20c97e9e-9340-41fa-9cb5-94c9f71a0245)
-![image](https://github.com/user-attachments/assets/b7f27474-3ff9-4642-98be-3c02824a8e7a)
-![image](https://github.com/user-attachments/assets/016e0a84-7649-43cd-aafb-40eb39ad54e6)
-
 
 
 ## Introduction
@@ -77,5 +65,22 @@ This project is licensed under the MIT License.
 ## Contact
 
 For queries or contributions, contact: [[anmols9911@gmail.com](mailto\:anmols9911@gmail.com)]
+
+
+
+![image](https://github.com/user-attachments/assets/0b698760-0bc9-44fc-8d77-21e8458a2db1)
+![image](https://github.com/user-attachments/assets/c4594696-7a13-463a-b09e-38225f10d29c)
+![image](https://github.com/user-attachments/assets/ebd68e12-2213-4936-bb82-b1d7c65fb4d4)
+![image](https://github.com/user-attachments/assets/d60bff00-bc70-4730-87c3-b7dff1b11c58)
+![image](https://github.com/user-attachments/assets/9a884913-128c-455b-b743-50fff52d2bc4)
+![image](https://github.com/user-attachments/assets/a79f1c0e-da23-467b-b7ed-4e71560c7c7c)
+![image](https://github.com/user-attachments/assets/ecc25400-76df-4ec3-9824-7f9312627d7a)
+![image](https://github.com/user-attachments/assets/0ae3c14a-d1f4-4fe5-a7ed-12c5ad20cd03)
+![image](https://github.com/user-attachments/assets/20c97e9e-9340-41fa-9cb5-94c9f71a0245)
+![image](https://github.com/user-attachments/assets/b7f27474-3ff9-4642-98be-3c02824a8e7a)
+![image](https://github.com/user-attachments/assets/016e0a84-7649-43cd-aafb-40eb39ad54e6)
+
+
+ 
 
 
